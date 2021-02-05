@@ -48,7 +48,7 @@ def main():
     
     '''
     #st.selectbox('Car Company',('HYUNDAI','HONDA','SUZUKI'))
-    st.markdown(page_bg_img, unsafe_allow_html=True)
+    #st.markdown(page_bg_img, unsafe_allow_html=True)
     
     
     Km_driven = st.number_input('Km_driven',1000,step=1000)
