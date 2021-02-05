@@ -53,24 +53,24 @@ def main():
     
     Km_driven = st.number_input('Km_driven',1000,step=1000)
     
-    fuel = st.sidebar.selectbox('Fuel Type',('Petrol' ,'Diesel' ,'CNG','LPG', 'Electric'))
+    fuel = st.selectbox('Fuel Type',('Petrol' ,'Diesel' ,'CNG','LPG', 'Electric'))
     
     print()
-    transmission = st.sidebar.selectbox('Transmission',('Manual' ,'Automatic'))
-    owner = st.sidebar.selectbox('Owner',('First Owner' ,'Second Owner' ,'Fourth & Above Owner' ,'Third Owner',
+    transmission = st.selectbox('Transmission',('Manual' ,'Automatic'))
+    owner = st.selectbox('Owner',('First Owner' ,'Second Owner' ,'Fourth & Above Owner' ,'Third Owner',
     'Test Drive Car'))
-    oldyear = st.sidebar.slider('Old Year',0,30)
-    st.sidebar.write(oldyear)
+    oldyear = st.slider('Old Year',0,30)
+    st.write(oldyear)
     k= [Km_driven]+ selection(fuel,transmission,owner)+[oldyear]
     x = "{:,}".format((round((price_predication(k[0],k[1],k[2],k[3],k[4]))[0])))
     
-    if st.sidebar.button('Calculate'):
+    if st.button('Calculate'):
         
-        st.sidebar.header('Car Price in 2021'+ ' ::: '+'₹' +str(x))
+        st.header('Car Price in 2021'+ ' ::: '+'₹' +str(x))
     
     if st.button('About us'):
         
-        st.sidebar.write('This project based on previous car dataset and predict prices with help of Random Forest Regressor')
+        st.write('This project based on previous car dataset and predict prices with help of Random Forest Regressor')
     
     
     
